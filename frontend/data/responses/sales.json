@@ -1,0 +1,22 @@
+[
+  {
+    "question": "¿Cómo se registran las ventas?",
+    "answer": "Las ventas se registran automáticamente desde el archivo Excel procesado. Cada transacción incluye fecha, monto, cliente y producto."
+  },
+  {
+    "question": "¿Qué reportes de ventas están disponibles?",
+    "answer": "Disponemos de reportes de ventas diarias, mensuales, por cliente, por producto y análisis de tendencias."
+  },
+  {
+    "question": "¿Cómo se calculan las métricas de ventas?",
+    "answer": "Las métricas incluyen ventas totales, promedio por transacción, productos más vendidos y crecimiento porcentual."
+  },
+  {
+    "question": "¿Qué indicadores de ventas son importantes?",
+    "answer": "Los indicadores clave son: volumen de ventas, ticket promedio, frecuencia de compra y retención de clientes."
+  },
+  {
+    "question": "¿Cómo identificar tendencias en las ventas?",
+    "answer": "Los gráficos muestran tendencias temporales. Busca patrones estacionales, días de mayor venta y productos con crecimiento."
+  }
+] 

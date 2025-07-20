@@ -1,13 +1,74 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUYA Fast-Data - Panel de Administración</title>
+    
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <img src="./assets/images/logo_tuya.svg" alt="TUYA Fast-Data" class="sidebar-logo" id="sidebarLogo">
+                    <span class="sidebar-title" id="sidebarTitle"></span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav" id="sidebarNav">
+                <!-- Los elementos del menú se generarán dinámicamente -->
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content" id="mainContent">
+            <!-- Navbar superior -->
+            <nav class="navbar is-white" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        <h1 class="title is-4" id="pageTitle">Dashboard</h1>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field has-addons">
+                            <div class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Búsqueda global..." id="globalSearch">
+                                <span class="icon is-left">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" id="globalSearchBtn">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido de la página -->
+            <div class="page-content" id="pageContent">
+                <!-- El contenido se cargará dinámicamente -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts de Vite -->
     <script type="module" src="/src/main.js"></script>
-  </body>
+</body>
 </html>

@@ -1,0 +1,22 @@
+[
+  {
+    "question": "¿Cómo se controla el inventario?",
+    "answer": "El inventario se controla mediante el seguimiento de entradas, salidas y stock actual. Se actualiza automáticamente con cada transacción."
+  },
+  {
+    "question": "¿Qué hacer cuando hay stock bajo?",
+    "answer": "Cuando el stock está bajo, el sistema genera alertas automáticas para notificar la necesidad de reabastecimiento."
+  },
+  {
+    "question": "¿Cómo se calcula el valor del inventario?",
+    "answer": "El valor se calcula multiplicando la cantidad en stock por el costo unitario promedio de cada producto."
+  },
+  {
+    "question": "¿Qué indicadores de inventario son importantes?",
+    "answer": "Rotación de inventario, días de inventario, productos con mayor movimiento y productos obsoletos."
+  },
+  {
+    "question": "¿Cómo optimizar el inventario?",
+    "answer": "Analiza la rotación de productos, ajusta niveles de stock según demanda y elimina productos obsoletos."
+  }
+] 
