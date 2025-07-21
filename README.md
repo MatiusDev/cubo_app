@@ -39,20 +39,23 @@ Aplicación web completa con backend FastAPI y frontend HTML/CSS/JavaScript, con
 
 2. **Instalar automáticamente**
    ```bash
-   # Windows
-   python install.py
+   # Windows - Doble clic en setup.bat
+   # O desde línea de comandos:
+   setup.bat
    
    # Linux
+   ./setup.sh
+   # O
    python3 install.py
    ```
 
 3. **Construir la aplicación completa (opcional)**
    ```bash
    # Windows
-   python build_full.py
+   python build.py
    
    # Linux
-   python3 build_full.py
+   python3 build.py
    ```
 
 4. **Ejecutar la aplicación**
@@ -119,6 +122,26 @@ pip install pyinstaller requests
 python run_app.py
 ```
 
+## 📦 Ejecutable para usuarios finales (solo frontend)
+
+Si solo quieres entregar el **frontend** como ejecutable para usuarios finales:
+
+1. **Genera el ejecutable usando PyInstaller:**
+   ```bash
+   pyinstaller launcher.spec
+   ```
+   El ejecutable quedará en `dist/launcher/`.
+
+2. **Distribuye el ejecutable**
+   - El usuario solo debe ejecutar el archivo `launcher` (o `launcher.exe` en Windows).
+   - El script instalará dependencias de frontend si es necesario, lanzará Vite y abrirá el navegador.
+
+3. **Requisitos para el usuario final**
+   - Node.js y npm instalados en el sistema.
+
+4. **Notas**
+   - Si quieres un ejecutable que no dependa de Node, deberías empaquetar el build estático (`npm run build`) y servirlo con un mini-servidor Python.
+
 ## 📁 Estructura del Proyecto
 
 ```
@@ -127,8 +150,7 @@ cubo_app/
 │   ├── app/
 │   │   ├── __init__.py
 │   │   ├── main.py          # API FastAPI
-│   │   └── server.py        # Servidor combinado
-│   ├── build_exe.py         # Script de construcción
+│   │   └── server.py        # Servidor backend
 │   ├── requirements.txt     # Dependencias Python
 │   └── dist/               # Ejecutable generado
 ├── frontend/
@@ -138,10 +160,13 @@ cubo_app/
 │   ├── package.json        # Dependencias Node.js
 │   └── index.html          # Página principal
 ├── run_app.py              # Script principal
-├── run_app_full.py         # Script completo (Backend + Frontend)
 ├── run_app.bat             # Launcher Windows
 ├── run_app.sh              # Launcher Linux
-├── build_full.py           # Script de construcción completa
+├── setup.bat               # Setup Windows
+├── setup.sh                # Setup Linux
+├── build.py                # Script de construcción
+├── launcher.py             # Ejecutable solo frontend (PyInstaller)
+├── launcher.spec           # Configuración PyInstaller para launcher
 └── README.md
 ```
 
@@ -161,7 +186,7 @@ cubo_app/
 4. Para detener la aplicación, presiona `Ctrl+C` en la terminal
 
 ### Modo Producción (compilado)
-1. Construye la aplicación: `python build_full.py`
+1. Construye la aplicación: `python build.py`
 2. Ejecuta la aplicación
 3. Se abrirá automáticamente en `http://localhost:8000`
 4. El frontend compilado se sirve desde el backend
@@ -214,7 +239,8 @@ Este error ocurre en sistemas Linux modernos. **Solución:**
 - Intenta ejecutar con Python directamente: `python run_app.py`
 
 ### Error: "Entorno virtual no encontrado"
-- Ejecuta `python install.py` para crear el entorno virtual
+- Ejecuta `./setup.sh` (Linux) o `setup.bat` (Windows) para crear el entorno virtual
+- O ejecuta manualmente: `python3 install.py`
 - O crea manualmente: `python3 -m venv venv`
 
 ## 🔄 Desarrollo
@@ -233,7 +259,7 @@ npm install
 npm run dev
 
 # O usar el script completo
-python run_app_full.py
+python run_app.py
 ```
 
 ## 📦 Distribución

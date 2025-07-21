@@ -1,0 +1,29 @@
+mode: full
+backend:
+  port: 8000
+  host: localhost
+  debug: false
+  reload: true
+frontend:
+  port: 5173
+  host: localhost
+  hot_reload: true
+  open_browser: true
+build:
+  mode: development
+  clean_after_build: true
+  pyinstaller:
+    onefile: true
+    windowed: true
+    icon: null
+development:
+  auto_open_browser: true
+  debug_mode: false
+  service_timeout: 30
+wsl:
+  auto_detect: true
+  use_wsl_browser: true
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: null

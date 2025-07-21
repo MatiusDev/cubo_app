@@ -10,13 +10,24 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
-# Verificar si estamos en WSL2
-if grep -qi microsoft /proc/version 2>/dev/null; then
-    echo "🐧 WSL2 detectado, usando script específico..."
-    chmod +x run_app_wsl.py
-    python3 run_app_wsl.py
-else
-    echo "🐧 Linux nativo detectado..."
+# Verificar si el entorno virtual existe
+if [ ! -d "venv" ]; then
+    echo "❌ Error: Entorno virtual no encontrado"
+    echo "💡 Ejecuta primero: python3 install.py"
+    exit 1
+fi
+
+# Verificar si el script principal existe
+if [ ! -f "run_app.py" ]; then
+    echo "❌ Error: run_app.py no encontrado"
+    exit 1
+fi
+
+# Hacer ejecutable el script si no lo es
+if [ ! -x "run_app.py" ]; then
     chmod +x run_app.py
-    python3 run_app.py
-fi 
+fi
+
+# Ejecutar la aplicación
+echo "🐧 Ejecutando aplicación..."
+python3 run_app.py
